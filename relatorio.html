@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Relatório de Marcações</title>
+    <link rel="stylesheet" href="relat.css">
+</head>
+<body>
+
+    <h2>Relatório de Marcações</h2>
+    
+    <!-- Contêiner para exibir os registros -->
+    <div id="report-container"></div>
+
+    <!-- Botão para voltar à página anterior -->
+    <button onclick="window.location.href='html.html'">Voltar</button>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const reportContainer = document.getElementById("report-container");
+
+            // Função para renderizar o relatório
+            function renderReport() {
+                const registers = JSON.parse(localStorage.getItem("register")) || [];
+                reportContainer.innerHTML = ""; // Limpa o contêiner
+
+                registers.forEach((register, index) => {
+                    const registerElement = document.createElement("div");
+                    registerElement.classList.add("register");
+
+                    registerElement.innerHTML = `
+                        <p>Data: ${register.date} | Hora: ${register.time} | Tipo: ${register.type}</p>
+                        <p>Observação: ${register.observacao}</p>
+                        <button class="button-edit" onclick="editRegister(${index})">Editar</button>
+                        <button class="button-delete" onclick="alert('Exclusão não permitida')">Excluir</button>
+                    `;
+
+                    reportContainer.appendChild(registerElement);
+                });
+            }
+
+            // Função para editar um registro
+            window.editRegister = function (index) {
+                const registers = JSON.parse(localStorage.getItem("register"));
+                const register = registers[index];
+                const newObservacao = prompt("Digite a nova observação:", register.observacao);
+
+                if (newObservacao !== null) {
+                    register.observacao = newObservacao;
+                    registers[index] = register;
+                    localStorage.setItem("register", JSON.stringify(registers));
+                    renderReport(); // Atualiza o relatório
+                }
+            };
+
+            // Inicializa a renderização do relatório
+            renderReport();
+        });
+    </script>
+
+</body>
+</html>

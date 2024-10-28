@@ -1,0 +1,82 @@
+body {
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(to bottom, #003DA5, #000000); /* Degradê azul para preto */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Fonte mais moderna */
+    color: #f8f9fa; /* Texto em branco para contraste */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    min-height: 100vh;
+}
+
+h2 {
+    margin-top: 20px;
+    font-size: 2rem;
+    color: #f8f9fa; /* Mantendo a cor do título consistente */
+}
+
+#report-container {
+    width: 80%;
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.9); /* Fundo branco com transparência para combinar com o tema */
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Sombra mais forte */
+}
+
+button {
+    margin: 20px auto;
+    padding: 12px 20px;
+    font-size: 1rem;
+    color: white;
+    background-color: #007BFF; /* Azul do Grêmio */
+    border: none;
+    border-radius: 25px; /* Borda mais arredondada para se alinhar ao estilo anterior */
+    cursor: pointer;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+    display: block;
+}
+
+button:hover {
+    transform: scale(1.05);
+    background-color: #0056b3; /* Azul mais escuro ao passar o mouse */
+}
+
+#report-container p {
+    font-size: 1rem;
+    line-height: 1.5;
+    color: #333; /* Cor do texto mais escura para melhor legibilidade */
+}
+
+.button-edit,
+.button-delete {
+    padding: 10px 15px;
+    font-size: 0.9rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+    display: inline-block;
+    margin-right: 10px; 
+}
+
+.button-edit {
+    background-color: #007BFF; /* Azul do Grêmio */
+    color: white;
+}
+
+.button-edit:hover {
+    background-color: #0056b3; /* Azul mais escuro ao passar o mouse */
+}
+
+.button-delete {
+    background-color: #000000; /* Vermelho para deletar */
+    color: white;
+}
+
+.button-delete:hover {
+    background-color: #000000; /* Vermelho mais escuro ao passar o mouse */
+}
