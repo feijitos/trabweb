@@ -1,0 +1,131 @@
+body {
+    margin: 0;
+    height: 100vh;
+    background: linear-gradient(to bottom, #003DA5, #000000); /* Degradê azul para preto */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Fonte mais moderna */
+    color: #ffffff;
+}
+
+.data-hora {
+    text-align: center;
+    padding-top: 20px;
+}
+
+#dialog-fechar {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    color: #007BFF; /* Azul do Grêmio */
+}
+
+dialog {
+    inset-inline-start: 0;
+    inset-inline-end: 0;
+    width: fit-content;
+    height: fit-content;
+    background-color: #ffffff;
+    color: #ffffff;
+    margin: auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    padding: 2em;
+    text-align: center;
+    animation: fadeIn 0.3s; /* Animação ao abrir o diálogo */
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+#btn-registrar-ponto,
+#btn-historico { /* Botão "Histórico de Registros" */
+    padding: 8px 20px; /* Ajuste de padding */
+    font-size: 16px; /* Tamanho da fonte */
+    cursor: pointer;
+    border-radius: 50px; /* Bordas arredondadas */
+    background: linear-gradient(to bottom, #0056b3, #007BFF); /* Gradiente azul */
+    color: #ffffff; /* Fonte branca */
+    border: none;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    display: block; /* Para centralizar */
+    margin: 20px auto; /* Para centralizar */
+}
+
+#btn-registrar-ponto:hover,
+#troca:hover {
+    background-color: #0056b3; /* Azul mais escuro ao passar o mouse */
+    transform: scale(1.05);
+}
+
+#clock-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px auto;
+}
+
+@font-face {
+    font-family: 'digital-clock-font';
+    src: url('digital-7.ttf') format('truetype');
+}
+
+#hora-atual {
+    font-family: 'Poppins', sans-serif; /* Nova fonte moderna */
+    color: white; /* Números brancos */
+    font-size: 80px;
+    text-shadow: 1px 1px 3px black; /* Sombra preta nos números */
+}
+
+#alerta-ponto-registrado {
+    border: none;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    font-size: 0.9rem; /* Diminuído para um tamanho de fonte menor */
+    padding: 6px 12px; /* Diminuído o padding para um alerta ainda menor */
+    background-color: #ffffff;
+    color: #0056b3;
+    border-radius: 20px; /* Aumentado o border-radius para um estilo mais arredondado */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Ajustado a sombra para corresponder ao novo tamanho */
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.hidden {
+    opacity: 0;
+    transform: translateY(20px);
+}
+
+.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+#dialog-data, #dialog-hora, #dialog-ultimo-registro {
+    margin-top: 10px;
+    font-size: 1.1rem;
+}
+
+#register-type, #data-escolhida, #observacao, #justificativa-ausencia, #upload-arquivo {
+    margin-top: 10px;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #007BFF; /* Borda azul */
+    width: 100%;
+    font-size: 1rem;
+    transition: border-color 0.3s ease;
+}
+
+#register-type:focus, #data-escolhida:focus, #observacao:focus, #justificativa-ausencia:focus, #upload-arquivo:focus {
+    border-color: #0056b3; /* Azul escuro ao focar */
+}
+
+#dia-semana,
+#data-atual {
+    color: #ffffff; /* Mudou para branco */
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5); 
+}

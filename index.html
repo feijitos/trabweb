@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistema de Registro de Pontos</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <!-- Contêiner para exibir data e hora -->
+    <div class="data-hora">
+        <h4 id="dia-semana"></h4>
+        <p id="data-atual"></p>
+        <div id="clock-container">
+            <p id="hora-atual"></p>
+        </div>
+        <button id="btn-registrar-ponto">Registrar ponto</button>
+    </div>
+
+    <!-- Diálogo para registrar ponto -->
+    <dialog id="dialog-ponto">
+        <p>Escolha uma data:</p>
+        <input type="date" id="data-escolhida">
+        <p id="dialog-data">Data:</p>
+        <p id="dialog-hora">Hora:</p>
+        <select id="register-type">
+            <option value="entrada">Entrada</option>
+            <option value="intervalo">Intervalo</option>
+            <option value="volta-intervalo">Volta intervalo</option>
+            <option value="saida">Saída</option>
+        </select>
+        <textarea id="observacao" placeholder="Observação"></textarea>
+        <input type="file" id="upload-arquivo">
+        <textarea id="justificativa-ausencia" placeholder="Justificativa para ausência"></textarea>
+        <button id="btn-dialog-register">Registrar</button>
+        <p id="dialog-ultimo-registro">Último ponto do usuário</p>
+        <button id="dialog-fechar">Fechar</button>
+    </dialog>
+
+    <!-- Alerta de sucesso no registro de ponto -->
+    <div id="alerta-ponto-registrado" class="hidden">
+        <p>Ponto registrado com sucesso.</p>
+    </div>
+
+    <!-- Botão para visualizar histórico de registros -->
+    <button id="btn-historico" onclick="window.location.href='relatorio.html'">Histórico de Registros</button>
+
+    <script src="js.js"></script>
+</body>
+</html>
